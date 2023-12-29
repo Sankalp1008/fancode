@@ -10,6 +10,9 @@ root:{
   mainHeader:{
 background:'#242424',
 position:'sticky',
+zIndex: 100,
+left: 0,
+
 top:0,
   },
 
@@ -93,7 +96,7 @@ const Header = ({value,handleChange=()=>null,filterData=[],genreValue}) => {
 
   return (
     
-    <div className={classes.root}> 
+    <div style={{ position: 'sticky', top: 0, zIndex: 999 }}> 
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
 </style>
