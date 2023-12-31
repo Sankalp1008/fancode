@@ -53,6 +53,8 @@ const Home = () => {
       setGenreValue((prevSelectedTabs) => [...prevSelectedTabs, newValue])
 
     } else {
+      setMovieGroups([])
+
       setGenreValue((prevSelectedTabs) => prevSelectedTabs.filter((tab) => tab !== newValue));
 
     }
@@ -134,7 +136,7 @@ const Home = () => {
           hasMore={hasMore}
 
         >
-          {movieGroups.map((group, index) => (
+          {movieList.length > 0 ? movieGroups.map((group, index) => (
             <div className={classes.listings} >
               <div className={classes.heading}>{Object.keys(group)[0]}</div>
               <Grid container spacing={0}>
@@ -152,7 +154,7 @@ const Home = () => {
                 ))}
               </Grid>
             </div>
-          ))}
+          )) : <div style={{color:'white', margin:'0 auto', fontWeight:700, fontSize:20}}></div>}
 
         </InfiniteScroll>
 
